@@ -1,103 +1,103 @@
-Título: Hook, Line, and Sinker, Genre: Romance
-Título: Truth and Other Lies, Genre: Drama
-Título: Girls Can Kiss Now, Genre: Essay
-Título: In the Margins, Genre: Non-fiction
-Título: Memphis, Genre: Historical fiction
-Título: The Wedding Crasher, Genre: Romantic comedy
-Título: Portrait of a Thief, Genre: Suspense
-Título: Time Is a Mother, Genre: Poetry
-Título: The Memory Librarian, Genre: Science fiction
-Título: Finding Me, Genre: Autobiography
-Título: Sea of Tranquility, Genre: Science fiction
-Título: Lessons in Chemistry, Genre: Historical fiction
-Título: Tomorrow, and Tomorrow, and Tomorrow, Genre: Contemporary fiction
-Título: The Maid, Genre: Mystery
-Título: The Candy House, Genre: Literary fiction
-Título: Black Cake, Genre: Family drama
-Título: Love on the Brain, Genre: Romance
-Título: Book Lovers, Genre: Romantic comedy
-Título: Violeta, Genre: Historical fiction
-Título: Our Missing Hearts, Genre: Dystopia
-Título: The Atlas Six, Genre: Fantasy
-Título: Demon Copperhead, Genre: Literary fiction
-Título: Nightcrawling, Genre: Drama
-Título: Shrines of Gaiety, Genre: Historical fiction
-Título: The House Across the Lake, Genre: Suspense
-Título: All Good People Here, Genre: Mystery
-Título: Young Mungo, Genre: Contemporary fiction
-Título: Carrie Soto Is Back, Genre: Sports
-Título: Upgrade, Genre: Science fiction
-Título: Fairy Tale, Genre: Fantasy
-Título: The Paris Apartment, Genre: Mystery
-Título: One Italian Summer, Genre: Romance
-Título: The School for Good Mothers, Genre: Dystopia
-Título: Remarkably Bright Creatures, Genre: Contemporary fiction
-Título: A Flicker in the Dark, Genre: Suspense
-Título: The Measure, Genre: Science fiction
-Título: I’m Glad My Mom Died, Genre: Memoir
-Título: Marrying the Ketchups, Genre: Humorous fiction
-Título: Our Wives Under the Sea, Genre: Horror
-Título: The Rabbit Hutch, Genre: Literary fiction
-Título: How High We Go in the Dark, Genre: Science fiction
-Título: Thistlefoot, Genre: Fantasy
-Título: Love Marriage, Genre: Drama
-Título: The Family Chao, Genre: Contemporary fiction
-Título: What Moves the Dead, Genre: Horror
-Título: Companion Piece, Genre: Literary fiction
-Título: Tomorrow in Shanghai, Genre: Short story collection
-Título: The Cartographers, Genre: Mystery
-Título: Lesser Known Monsters of the 21st Century, Genre: Fantasy
-Título: The Kingdom of Sand, Genre: Drama
-Título: Vladimir, Genre: Contemporary fiction
-Título: The Light Pirate, Genre: Dystopia
-Título: Solito, Genre: Memoir
-Título: Night of the Living Rez, Genre: Short story collection
-Título: Scattered All Over the Earth, Genre: Science fiction
-Título: Youngblood, Genre: Suspense
-Título: Horse, Genre: Historical fiction
-Título: The World We Make, Genre: Fantasy
-Título: The Marriage Portrait, Genre: Historical fiction
-Título: When We Were Birds, Genre: Drama
-Título: Signal Fires, Genre: Contemporary fiction
-Título: The It Girl, Genre: Mystery
-Título: The Last White Man, Genre: Literary fiction
-Título: Hester, Genre: Historical fiction
-Título: All This Could Be Different, Genre: Drama
-Título: Properties of Thirst, Genre: Literature
-Título: Before You Knew My Name, Genre: Suspense
-Título: Counterfeit, Genre: Black comedy
-Título: The Stranger in the Lifeboat, Genre: Spiritual fiction
-Título: Chorus, Genre: Family drama
-Título: Africa Is Not a Country, Genre: Non-fiction
-Título: Acts of Service, Genre: Contemporary fiction
-Título: The Golden Enclaves, Genre: Fantasy
-Título: The Cloisters, Genre: Mystery
-Título: Lucie Yi Is Not a Romantic, Genre: Romance
-Título: The Guncle, Genre: Humorous fiction
-Título: Jackal, Genre: Horror
-Título: Shadows of Pecan Hollow, Genre: Drama
-Título: Aesthetica, Genre: Literary fiction
-Título: The Many Daughters of Afong Moy, Genre: Historical fiction
-Título: The Book Eaters, Genre: Fantasy
-Título: Drunk on Love, Genre: Romance
-Título: The Island of Missing Trees, Genre: Literary fiction
-Título: Other Birds, Genre: Drama
-Título: Haven, Genre: Historical fiction
-Título: The Daughter of Doctor Moreau, Genre: Science fiction
-Título: A Lady’s Guide to Fortune-Hunting, Genre: Romantic comedy
-Título: Small Angels, Genre: Horror
-Título: The Winners, Genre: Contemporary fiction
-Título: The Ink Black Heart, Genre: Mystery
-Título: The Lost Metal, Genre: Fantasy
-Título: Remarkably Bright Creatures, Genre: Drama
-Título: The House of Fortune, Genre: Historical fiction
-Título: The Change, Genre: Suspense
-Título: The Hacienda, Genre: Horror
-Título: None of This Would Have Happened If Prince Were Alive, Genre: Black comedy
-Título: The Perfect Crimes of Marian Hayes, Genre: Romance
-Título: Motherthing, Genre: Literary fiction
-Título: Night Wherever We Go, Genre: Historical fiction
-Título: The Birdcatcher, Genre: Drama
+Title: Hook, Line, and Sinker, Genre: Romance
+Title: Truth and Other Lies, Genre: Drama
+Title: Girls Can Kiss Now, Genre: Essay
+Title: In the Margins, Genre: Non-fiction
+Title: Memphis, Genre: Historical fiction
+Title: The Wedding Crasher, Genre: Romantic comedy
+Title: Portrait of a Thief, Genre: Suspense
+Title: Time Is a Mother, Genre: Poetry
+Title: The Memory Librarian, Genre: Science fiction
+Title: Finding Me, Genre: Autobiography
+Title: Sea of Tranquility, Genre: Science fiction
+Title: Lessons in Chemistry, Genre: Historical fiction
+Title: Tomorrow, and Tomorrow, and Tomorrow, Genre: Contemporary fiction
+Title: The Maid, Genre: Mystery
+Title: The Candy House, Genre: Literary fiction
+Title: Black Cake, Genre: Family drama
+Title: Love on the Brain, Genre: Romance
+Title: Book Lovers, Genre: Romantic comedy
+Title: Violeta, Genre: Historical fiction
+Title: Our Missing Hearts, Genre: Dystopia
+Title: The Atlas Six, Genre: Fantasy
+Title: Demon Copperhead, Genre: Literary fiction
+Title: Nightcrawling, Genre: Drama
+Title: Shrines of Gaiety, Genre: Historical fiction
+Title: The House Across the Lake, Genre: Suspense
+Title: All Good People Here, Genre: Mystery
+Title: Young Mungo, Genre: Contemporary fiction
+Title: Carrie Soto Is Back, Genre: Sports
+Title: Upgrade, Genre: Science fiction
+Title: Fairy Tale, Genre: Fantasy
+Title: The Paris Apartment, Genre: Mystery
+Title: One Italian Summer, Genre: Romance
+Title: The School for Good Mothers, Genre: Dystopia
+Title: Remarkably Bright Creatures, Genre: Contemporary fiction
+Title: A Flicker in the Dark, Genre: Suspense
+Title: The Measure, Genre: Science fiction
+Title: I’m Glad My Mom Died, Genre: Memoir
+Title: Marrying the Ketchups, Genre: Humorous fiction
+Title: Our Wives Under the Sea, Genre: Horror
+Title: The Rabbit Hutch, Genre: Literary fiction
+Title: How High We Go in the Dark, Genre: Science fiction
+Title: Thistlefoot, Genre: Fantasy
+Title: Love Marriage, Genre: Drama
+Title: The Family Chao, Genre: Contemporary fiction
+Title: What Moves the Dead, Genre: Horror
+Title: Companion Piece, Genre: Literary fiction
+Title: Tomorrow in Shanghai, Genre: Short story collection
+Title: The Cartographers, Genre: Mystery
+Title: Lesser Known Monsters of the 21st Century, Genre: Fantasy
+Title: The Kingdom of Sand, Genre: Drama
+Title: Vladimir, Genre: Contemporary fiction
+Title: The Light Pirate, Genre: Dystopia
+Title: Solito, Genre: Memoir
+Title: Night of the Living Rez, Genre: Short story collection
+Title: Scattered All Over the Earth, Genre: Science fiction
+Title: Youngblood, Genre: Suspense
+Title: Horse, Genre: Historical fiction
+Title: The World We Make, Genre: Fantasy
+Title: The Marriage Portrait, Genre: Historical fiction
+Title: When We Were Birds, Genre: Drama
+Title: Signal Fires, Genre: Contemporary fiction
+Title: The It Girl, Genre: Mystery
+Title: The Last White Man, Genre: Literary fiction
+Title: Hester, Genre: Historical fiction
+Title: All This Could Be Different, Genre: Drama
+Title: Properties of Thirst, Genre: Literature
+Title: Before You Knew My Name, Genre: Suspense
+Title: Counterfeit, Genre: Black comedy
+Title: The Stranger in the Lifeboat, Genre: Spiritual fiction
+Title: Chorus, Genre: Family drama
+Title: Africa Is Not a Country, Genre: Non-fiction
+Title: Acts of Service, Genre: Contemporary fiction
+Title: The Golden Enclaves, Genre: Fantasy
+Title: The Cloisters, Genre: Mystery
+Title: Lucie Yi Is Not a Romantic, Genre: Romance
+Title: The Guncle, Genre: Humorous fiction
+Title: Jackal, Genre: Horror
+Title: Shadows of Pecan Hollow, Genre: Drama
+Title: Aesthetica, Genre: Literary fiction
+Title: The Many Daughters of Afong Moy, Genre: Historical fiction
+Title: The Book Eaters, Genre: Fantasy
+Title: Drunk on Love, Genre: Romance
+Title: The Island of Missing Trees, Genre: Literary fiction
+Title: Other Birds, Genre: Drama
+Title: Haven, Genre: Historical fiction
+Title: The Daughter of Doctor Moreau, Genre: Science fiction
+Title: A Lady’s Guide to Fortune-Hunting, Genre: Romantic comedy
+Title: Small Angels, Genre: Horror
+Title: The Winners, Genre: Contemporary fiction
+Title: The Ink Black Heart, Genre: Mystery
+Title: The Lost Metal, Genre: Fantasy
+Title: Remarkably Bright Creatures, Genre: Drama
+Title: The House of Fortune, Genre: Historical fiction
+Title: The Change, Genre: Suspense
+Title: The Hacienda, Genre: Horror
+Title: None of This Would Have Happened If Prince Were Alive, Genre: Black comedy
+Title: The Perfect Crimes of Marian Hayes, Genre: Romance
+Title: Motherthing, Genre: Literary fiction
+Title: Night Wherever We Go, Genre: Historical fiction
+Title: The Birdcatcher, Genre: Drama
 Title: Stella Maris, Genre: Literary Fiction
 Title: Bliss Montage: Stories, Genre: Short Stories
 Title: The Colony, Genre: Literary Fiction
