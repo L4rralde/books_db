@@ -12,7 +12,11 @@ Book::Book(string title, int year, string genre){
 }
 
 void Book::print(){
-    cout << title << ". " << year << ". " << genre << endl;
+    cout << title << ", " << genre << endl;
+}
+
+bool Book::operator==(const Book &other){
+    return title == other.title && genre == other.genre;
 }
 
 vector<string> read_lines(string path){
@@ -46,7 +50,9 @@ vector<string> get_fields(string book){
 }
 
 
-DataBase::DataBase(string path, int year): table(100){
+DataBase::DataBase(): table(100), cnt(0) {}
+
+DataBase::DataBase(string path, int year): table(100), cnt(0){
     vector<string> lines = read_lines(path);
     int n_lines = lines.size();
     for(int i=0; i<n_lines; ++i){
@@ -56,6 +62,48 @@ DataBase::DataBase(string path, int year): table(100){
         Book book(fields[0], year, fields[1]);
         add(book);
     }
+}
+
+DataBase DataBase::operator&(DataBase &other){
+    DataBase and_db;
+    DataBase *small, *large;
+    if(other.cnt > cnt){
+        small = this;
+        large = &other;
+    }else{
+        small = &other;
+        large = this;
+    }
+    for(int i=0; i<100; ++i){
+        for(int j=0; j < static_cast<int>(small->table[i].size()); ++j)
+            if(large->exists(small->table[i][j]))
+                and_db.add(small->table[i][j]);
+    }
+
+    return and_db;
+}
+
+DataBase DataBase::operator|(DataBase &other){
+    DataBase or_db;
+    for(int i=0; i<100; ++i){
+        for(int j = 0; j < static_cast<int>(table[i].size()); ++j)
+            or_db.add(table[i][j]);
+        for(int j = 0; j < static_cast<int>(other.table[i].size()); ++j)
+            or_db.add(other.table[i][j]);
+    }
+    return or_db;
+}
+
+DataBase DataBase::operator-(DataBase &other){
+    DataBase wo_db;
+    for(int i = 0; i < 100; ++i){
+        for(int j = 0; j < static_cast<int>(table[i].size()); ++j){
+            if(other.exists(table[i][j]))
+                continue;
+            wo_db.add(table[i][j]);
+        }
+    }
+    return wo_db;
 }
 
 int DataBase::hash(string input){
@@ -68,6 +116,11 @@ int DataBase::hash(string input){
 
 void DataBase::add(Book book){
     int idx = hash(book.title);
+    int len = table[idx].size();
+    for(int j = 0; j < len; ++j)
+        if(book == table[idx][j])
+            return;
+    cnt++;
     table[idx].push_back(book);
 }
 
@@ -81,4 +134,15 @@ void DataBase::print(){
 
 void print(DataBase &db){
     db.print();
+}
+
+bool DataBase::exists(const Book &book){
+    int idx = hash(book.title);
+    if(table[idx].empty())
+        return false;
+    int len = table[idx].size();
+    for(int i=0; i<len; ++i)
+        if(table[idx][i] == book)
+            return true;
+    return false;
 }

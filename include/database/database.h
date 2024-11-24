@@ -14,16 +14,25 @@ public:
     Book(string, int, string);
 
     void print();
+    bool operator==(const Book &other);
 };
 
 class DataBase{
 private:
     vector< vector<Book> > table;
     int hash(string input);
+    int cnt;
 public:
+    DataBase();
     DataBase(string path, int year);
+
+    DataBase operator&(DataBase &other);
+    DataBase operator|(DataBase &other);
+    DataBase operator-(DataBase &other);    
+
     void add(Book book);
     void print();
+    bool exists(const Book &book);
 };
 
 vector<string> read_lines(string path);
