@@ -19,6 +19,28 @@ bool Book::operator==(const Book &other){
     return title == other.title && genre == other.genre;
 }
 
+Frequency::Frequency(): key(""), cnt(0){}
+
+Frequency::Frequency(string key): cnt(1){
+    this->key = key;
+}
+
+bool Frequency::operator==(Frequency &other){
+    return other.key == key;
+}
+
+bool Frequency::operator==(string &key){
+    return this->key == key;
+}
+
+void Frequency::inc(){
+    cnt++;
+}
+
+void Frequency::print(){
+    cout << cnt << " " << key << endl;
+}
+
 vector<string> read_lines(string path){
     vector<string> lines;
     ifstream file(path);
@@ -122,6 +144,16 @@ void DataBase::add(Book book){
             return;
     cnt++;
     table[idx].push_back(book);
+    
+    len = genres.size();
+    for(int j = 0; j < len; ++j){
+        if(genres[j] == book.genre){
+            genres[j].inc();
+            return;
+        }
+    }
+
+    genres.push_back(Frequency(book.genre));
 }
 
 void DataBase::print(){
@@ -145,4 +177,10 @@ bool DataBase::exists(const Book &book){
         if(table[idx][i] == book)
             return true;
     return false;
+}
+
+void DataBase::show_genres(){
+    int len = genres.size();
+    for(int i = 0; i < len; ++i)
+        genres[i].print();
 }
