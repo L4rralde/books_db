@@ -45,6 +45,7 @@ public:
     DataBase operator&(DataBase &other);
     DataBase operator|(DataBase &other);
     DataBase operator-(DataBase &other);    
+    DataBase operator^(DataBase &other);
 
     void add(Book book);
     void print();

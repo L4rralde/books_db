@@ -128,6 +128,13 @@ DataBase DataBase::operator-(DataBase &other){
     return wo_db;
 }
 
+DataBase DataBase::operator^(DataBase &other){
+    DataBase xor_db;
+    DataBase or_db = this->operator|(other);
+    DataBase and_db = this->operator&(other);
+    return or_db - and_db;
+}
+
 int DataBase::hash(string input){
     int size = input.size();
     int acc = 0;
