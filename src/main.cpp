@@ -100,5 +100,5 @@ int main(int argc, char **argv){
 //  - [x] En Diferencia simétrica, mostrar la
 //      información capturada de cada tabla
 //
-//  - [ ] Graficar el factor de carga de cada tabla
-//  - [ ] Graficar mediante Cairo o GNUplot
+//  - [x] Graficar el factor de carga de cada tabla
+//  - [x] Graficar mediante Cairo o GNUplot
