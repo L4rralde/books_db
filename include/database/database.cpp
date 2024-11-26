@@ -48,7 +48,7 @@ vector<string> read_lines(string path){
 
     string line;
 
-    if (file.is_open()) {
+    if(file.is_open()){
         while (getline(file, line))
             lines.push_back(line);
         file.close();
@@ -87,9 +87,12 @@ vector<string> get_fields(string book){
 }
 
 
-DataBase::DataBase(): table(100), cnt(0){}
+DataBase::DataBase(): table(100), cnt(0){
+    instance_id++;
+}
 
 DataBase::DataBase(string path, int year): table(100), cnt(0) {
+    instance_id++;
     vector<string> lines = read_lines(path);
 
     if(lines.size() == 0)
@@ -187,7 +190,13 @@ void DataBase::add(Book book){
     genres.push_back(Frequency(book.genre));
 }
 
+void DataBase::print_name(){
+    cout << "%%%%%%%%%% " << name << " %%%%%%%%%%" << endl;
+}
+
 void DataBase::print(){
+    print_name();
+
     int title_width = 1;
     int genre_width = 1;
     for(int i=0; i<100; ++i){
@@ -242,6 +251,7 @@ bool DataBase::exists(const Book &book){
 }
 
 void DataBase::show_genres(){
+    cout << "Genres' frequencies" << endl;
     int title_width = 1;
     int genre_width = 1;
     for(int i=0; i<100; ++i){
@@ -274,4 +284,69 @@ void DataBase::show_genres(){
     }
     cout    << setfill('-') << setw(cnt_len + title_width + genre_width + 4) 
             << "" << setfill(' ') << endl;
+}
+
+void DataBase::set_name(string in){
+    name = in;
+}
+
+void DataBase::plot_load_factor(){
+    if(name.empty())
+        cerr << "Name must be set first" << endl;
+
+    vector<int> load_factor(100, 0);
+    for(int i = 0; i < 100; ++i)
+        load_factor[i] = table[i].size();
+    
+    string dataf_path = "tmp/" + name + ".dat";
+    string title = name + "'s Load Factor";
+    string plot_path = "plots/" + name + ".png";
+
+    ofstream dataf(dataf_path);
+    if(!dataf.is_open()){
+        cerr << "Error: Unable to open file " << dataf_path << endl;
+        return;
+    }
+
+    for(int i = 0; i < 100; ++i)
+        dataf << i+1 << " " << load_factor[i] << endl;
+    dataf.close();
+
+    int max_load_factor = *max_element(load_factor.begin(), load_factor.end());
+
+    FILE *fp = popen("gnuplot", "w");
+    if(!fp){
+        cerr << "Error: Unable to open gnuplot process" << endl;
+        return;
+    }
+    
+    fprintf(fp, "reset session\n");
+    fprintf(fp, "set term pngcairo\n");
+    fprintf(fp, "set output '%s'\n", plot_path.c_str());
+    fprintf(fp, "set datafile separator whitespace\n");
+    fprintf(fp, "set style data histogram\n");
+    //fprintf(fp, "set grid\n");
+    //fprintf(fp, "set term dumb\n");  
+    fprintf(fp, "set style histogram rowstacked\n");
+    fprintf(fp, "set boxwidth 1.0 relative\n");
+    fprintf(fp, "set yrange[0:%d]\n", max_load_factor + 1);
+    fprintf(fp, "set xrange[0:101]\n");
+    fprintf(fp, "set style fill solid 1.0 border -1\n");
+    fprintf(fp, "set xtics rotate by -90\n");
+    fprintf(fp, "set tics font \"Arial,10\"\n");
+    fprintf(fp, "set title \"%s\"\n", title.c_str());
+    fprintf(fp, "set xlabel \"%s\"\n", "index");
+    fprintf(fp, "set ylabel \"%s\"\n", "colissions");      
+    fprintf(
+        fp,
+        "plot \"%s\" using 1:2 with boxes title \"Load Factor\"\n",
+        dataf_path.c_str()
+    );
+
+    // Close the gnuplot process
+    if (pclose(fp) == -1) {
+        cerr << "Error: gnuplot process did not close properly" << endl;
+    }
+
+    cout << "Plot saved at: " << plot_path << endl;
 }

@@ -43,7 +43,10 @@ private:
     vector<Frequency> genres;
     int hash(string input);
     int cnt;
+    string name;
+    void print_name();
 public:
+    static int instance_id;
     DataBase();
     DataBase(string path, int year);
 
@@ -56,6 +59,8 @@ public:
     void print();
     bool exists(const Book &book);
     void show_genres();
+    void set_name(string in);
+    void plot_load_factor();
 };
 
 vector<string> read_lines(string path);
