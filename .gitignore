@@ -4,3 +4,4 @@
 *.log
 tmp
 plots
+.ipynb_checkpoints/
