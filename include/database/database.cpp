@@ -224,7 +224,6 @@ void DataBase::print(){
     }
     cout    << setfill('-') << setw(cnt_len + title_width + genre_width + 4) 
             << "" << setfill(' ') << endl;
-    cout << endl;
 }
 
 void print(DataBase &db){
@@ -243,7 +242,36 @@ bool DataBase::exists(const Book &book){
 }
 
 void DataBase::show_genres(){
+    int title_width = 1;
+    int genre_width = 1;
+    for(int i=0; i<100; ++i){
+        int len = table[i].size();
+        for(int j=0; j<len; ++j){
+            title_width = max(title_width, static_cast<int>(table[i][j].title.size()));
+            genre_width = max(genre_width, static_cast<int>(table[i][j].genre.size()));
+        }
+    }
+
     int len = genres.size();
-    for(int i = 0; i < len; ++i)
-        genres[i].print();
+
+    int cnt_len = 1;
+    for(int dec = 1; dec < cnt; dec *= 10)
+        cnt_len++;
+
+    // Print header
+    cout << left << setw(cnt_len) << ""
+         << left << setw(title_width + 2) << "Genre"
+         << "| "
+         << left << setw(genre_width) << "Frequency" << endl;
+
+    int line = 1;
+    for(int i = 0; i < len; ++i){
+        cout    << left << setw(cnt_len) << line++
+                << left << setw(title_width + 2) << genres[i].key
+                << "| "
+                << left << setw(genre_width) << genres[i].cnt
+                << endl;
+    }
+    cout    << setfill('-') << setw(cnt_len + title_width + genre_width + 4) 
+            << "" << setfill(' ') << endl;
 }

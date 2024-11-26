@@ -24,10 +24,9 @@ public:
 
 //Clase que cuenta la repetición de una llave dada.
 class Frequency{
-private:
+public:
     string key;
     int cnt;
-public:
     Frequency();
     Frequency(string key);
     bool operator==(Frequency &other);

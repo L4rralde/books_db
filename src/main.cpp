@@ -29,14 +29,16 @@ int main(int argc, char **argv){
     DataBase former_not_latter = db_2022 - db_2023;
     cout << "2022 books except 2023:" << endl;
     print(former_not_latter);
-    //former_not_latter.show_genres();
+    cout << "Genres' frequencies" << endl;
+    former_not_latter.show_genres();
     cout << endl;
 
     //2023 - 2022
     DataBase latter_not_former = db_2023 - db_2022;
     cout << "2023 books except 2022:" << endl;
     print(latter_not_former);
-    //latter_not_former.show_genres();
+    cout << "Genres' frequencies" << endl;
+    latter_not_former.show_genres();
     cout << endl;
 
     //Diferencia simétrica
