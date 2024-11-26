@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <regex>
+#include <iomanip>
 #include "database.h"
 
 using namespace std;
@@ -12,7 +13,7 @@ Book::Book(string title, int year, string genre){
 }
 
 void Book::print(){
-    cout << title << ", " << genre << endl;
+    cout << title << ". " << genre << endl;
 }
 
 bool Book::operator==(const Book &other){
@@ -56,26 +57,49 @@ vector<string> read_lines(string path){
     return lines;
 }
 
+//Implemented in case get_fields didn't not work. However, it turned out the latter 
+//is better than this
+vector<string> match_fields(string book){
+    vector<string> fields;
+    regex pattern("Title:\\s*(.+?),\\s*Genre:\\s*(.+)");
+    smatch matches;
+    if(!regex_match(book, matches, pattern))
+        return fields;
+    fields.push_back(matches.str(1));
+    fields.push_back(matches.str(2));
+    return fields;
+}
+
 vector<string> get_fields(string book){
     vector<string> fields;
-    int idx = book.find(", Genre:");
+    int title_i = book.find("Title: ");
+    int genre_i = book.find(", Genre:");
     char title[book.size()];
-    book.copy(title, idx - 7, 7);
-    title[idx - 7] = '\0';
+    book.copy(title, genre_i - 7 - title_i, 7 + title_i);
+    title[genre_i - 7] = '\0';
     fields.push_back(title);
     char genre[book.size()];
-    book.copy(genre, book.size() - idx - 9, idx+9);
-    genre[book.size() - idx - 9] = '\0';
+    book.copy(genre, book.size() - genre_i - 9, genre_i+9);
+    genre[book.size() - genre_i - 9] = '\0';
     fields.push_back(genre);
 
     return fields;
 }
 
 
-DataBase::DataBase(): table(100), cnt(0) {}
+DataBase::DataBase(): table(100), cnt(0){}
 
-DataBase::DataBase(string path, int year): table(100), cnt(0){
+DataBase::DataBase(string path, int year): table(100), cnt(0) {
     vector<string> lines = read_lines(path);
+
+    if(lines.size() == 0)
+        return;
+
+    // Remove UTF-8 BOM if present
+    const string utf8_bom = "\xEF\xBB\xBF";
+    if (lines[0].compare(0, utf8_bom.size(), utf8_bom) == 0)
+        lines[0].erase(0, utf8_bom.size());
+
     int n_lines = lines.size();
     for(int i=0; i<n_lines; ++i){
         vector<string> fields = get_fields(lines[i]);
@@ -164,11 +188,43 @@ void DataBase::add(Book book){
 }
 
 void DataBase::print(){
+    int title_width = 1;
+    int genre_width = 1;
     for(int i=0; i<100; ++i){
         int len = table[i].size();
-        for(int j=0; j<len; ++j)
-            table[i][j].print();
+        for(int j=0; j<len; ++j){
+            title_width = max(title_width, static_cast<int>(table[i][j].title.size()));
+            genre_width = max(genre_width, static_cast<int>(table[i][j].genre.size()));
+        }
     }
+
+    int cnt_len = 1;
+    for(int dec = 1; dec < cnt; dec *= 10)
+        cnt_len++;
+    
+    // Print header
+    cout << left << setw(cnt_len) << ""
+         << left << setw(title_width + 2) << "Title"
+         << "| "
+         << left << setw(genre_width) << "Genre" << endl;
+    cout    << setfill('-') << setw(cnt_len + title_width + genre_width + 4)
+            << "" << setfill(' ') << endl;
+
+
+    int line = 1;
+    for(int i=0; i<100; ++i){
+        int len = table[i].size();
+        for(int j=0; j<len; ++j){
+            cout    << left << setw(cnt_len) << line++
+                    << left << setw(title_width + 2) << table[i][j].title
+                    << "| "
+                    << left << setw(genre_width) << table[i][j].genre
+                    << endl;
+        }
+    }
+    cout    << setfill('-') << setw(cnt_len + title_width + genre_width + 4) 
+            << "" << setfill(' ') << endl;
+    cout << endl;
 }
 
 void print(DataBase &db){

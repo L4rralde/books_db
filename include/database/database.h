@@ -1,3 +1,7 @@
+/*
+Librería de Bases de datos de libros mediante tablas Hash
+Autor: Emmanuel A. Larralde Ortiz | emmanuel.larralde@cimat.mx
+*/
 #ifndef DATABASE_H
 #define DATABASE_H
 
@@ -6,17 +10,19 @@
 
 using namespace std;
 
+//Clase que contiene la información de un libro en la base de datos.
 class Book{
 public:
-    string title;
-    int year;
-    string genre;
-    Book(string, int, string);
+    string title; //Título
+    int year; //Año
+    string genre; //Género
+    Book(string, int, string); //Constructor
 
-    void print();
+    void print(); //Imprime en la terminal el contenido
     bool operator==(const Book &other);
 };
 
+//Clase que cuenta la repetición de una llave dada.
 class Frequency{
 private:
     string key;
