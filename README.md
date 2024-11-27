@@ -1,5 +1,6 @@
 # Tarea 8
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/L4rralde/books_db/HEAD?labpath=main.ipynb)
 ## Dependencias
 
 - gnuplot
@@ -13,6 +14,8 @@ g++ include/database/database.cpp src/main.cpp -o output/main.o -lm
 ```
 
 ## Uso
+
+El siguiente comando ejecutará todos las operaciones descritas en la tarea.
 
 ```sh
 ./output/main.o data/libros2022.txt data/libros2023.txt
